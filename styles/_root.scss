@@ -1,0 +1,29 @@
+@use "variables" as *;
+
+/* ============================================================
+   Sacrophagia — tema escuro
+   Carne (círculo)  #bb2a45 | Nervo (triângulo) #f2ae2e
+   Juízo (quadrado) #25adda | Alma (losango)    #a369dd
+   ============================================================ */
+
+.sacrophagia {
+  @each $key, $color in $attributes {
+    --sacro-#{$key}: #{$color};
+  }
+
+  --sacro-bg-0: #{$bg-0};
+  --sacro-bg-1: #{$bg-1};
+  --sacro-bg-2: #{$bg-2};
+  --sacro-border: #{$border};
+  --sacro-text: #{$text};
+  --sacro-text-dim: #{$text-dim};
+  --sacro-radius: #{$radius};
+
+  /* Cor de destaque por atributo (no elemento raiz ou em descendentes) */
+  @each $key, $color in $attributes {
+    .attribute-#{$key},
+    &.attribute-#{$key} {
+      --attr-color: var(--sacro-#{$key});
+    }
+  }
+}

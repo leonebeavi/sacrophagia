@@ -1,0 +1,47 @@
+/* ---------- Cartão de rolagem no chat ---------- */
+
+.sacrophagia.attribute-roll-card {
+  padding: 0.5rem;
+  color: var(--sacro-text);
+  background: linear-gradient(160deg, var(--sacro-bg-2), var(--sacro-bg-0));
+  border: 1px solid var(--sacro-border);
+  border-left: 3px solid var(--attr-color, var(--sacro-border));
+  border-radius: var(--sacro-radius);
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.35rem;
+    border-bottom: 1px solid var(--sacro-border);
+
+    .shape {
+      width: 16px;
+      height: 16px;
+    }
+
+    h3 {
+      margin: 0;
+      border: none;
+      font-size: 0.95em;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      /* clareia a cor do atributo só no texto (contraste AA); as formas mantêm a cor exata */
+      color: color-mix(in srgb, var(--attr-color, var(--sacro-text)) 60%, white);
+    }
+  }
+
+  .dice-formula,
+  .dice-total {
+    background: rgb(0 0 0 / 35%);
+    border: 1px solid var(--sacro-border);
+    border-radius: var(--sacro-radius);
+    color: var(--sacro-text);
+  }
+
+  .dice-total {
+    font-weight: 700;
+    text-shadow: 0 0 8px var(--attr-color, transparent);
+  }
+}
