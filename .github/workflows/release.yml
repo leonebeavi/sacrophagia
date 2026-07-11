@@ -1,0 +1,37 @@
+# Release automatizada: ao enviar uma tag (ex.: 0.1.0), monta o zip instalável
+# e anexa sacrophagia.zip + system.json à release do GitHub. É esse par de
+# assets que faz o manifest/download do system.json resolverem no Foundry.
+name: Release
+
+on:
+  push:
+    tags: ["*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Lista de inclusão explícita: só o que a instalação precisa
+      - name: Montar o zip do sistema
+        run: |
+          zip -r sacrophagia.zip \
+            system.json \
+            sacrophagia.mjs \
+            module \
+            styles \
+            templates \
+            lang \
+            LICENSE \
+            README.md
+
+      - name: Publicar release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            sacrophagia.zip
+            system.json
