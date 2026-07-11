@@ -1,0 +1,61 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Personagem",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item"
+    }
+  },
+  "SACROPHAGIA": {
+    "Attributes": {
+      "carne": "Carne",
+      "nervo": "Nervo",
+      "juizo": "Juízo",
+      "alma": "Alma"
+    },
+    "Tabs": {
+      "items": "Itens",
+      "notes": "Notas"
+    },
+    "Sheets": {
+      "Character": "Sacrophagia — Personagem",
+      "Npc": "Sacrophagia — NPC",
+      "Item": "Sacrophagia — Item"
+    },
+    "Sheet": {
+      "Name": "Nome",
+      "EditImage": "Trocar imagem"
+    },
+    "Items": {
+      "New": "Novo item",
+      "Create": "Criar item",
+      "Delete": "Excluir item",
+      "Empty": "Nada por aqui ainda."
+    },
+    "Chat": {
+      "AttributeTest": "Teste de {attribute}"
+    },
+    "Actor": {
+      "base": {
+        "FIELDS": {
+          "attributes": {
+            "carne": { "value": { "label": "Carne" } },
+            "nervo": { "value": { "label": "Nervo" } },
+            "juizo": { "value": { "label": "Juízo" } },
+            "alma": { "value": { "label": "Alma" } }
+          },
+          "biography": { "label": "Biografia" }
+        }
+      }
+    },
+    "Item": {
+      "base": {
+        "FIELDS": {
+          "description": { "label": "Descrição" }
+        }
+      }
+    }
+  }
+}

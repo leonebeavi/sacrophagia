@@ -1,0 +1,25 @@
+<header class="sheet-header">
+  <button type="button" class="profile-button" data-action="editImage" data-edit="img"
+          data-tooltip="{{localize 'SACROPHAGIA.Sheet.EditImage'}}"
+          aria-label="{{localize 'SACROPHAGIA.Sheet.EditImage'}}">
+    <img class="profile" src="{{actor.img}}" alt="{{actor.name}}" />
+  </button>
+
+  <div class="identity">
+    <input class="charname" type="text" name="name" value="{{actor.name}}"
+           placeholder="{{localize 'SACROPHAGIA.Sheet.Name'}}" />
+    <span class="doc-type">{{localize (concat "TYPES.Actor." actor.type)}}</span>
+  </div>
+
+  <div class="attributes">
+    {{#each attributes}}
+    <div class="attribute attribute-{{this.key}}" data-attribute="{{this.key}}">
+      <button type="button" class="shape shape-{{this.shape}}" data-action="rollAttribute"
+              data-tooltip="{{this.label}}" aria-label="{{this.label}}"></button>
+      <input type="number" name="system.attributes.{{this.key}}.value" value="{{this.value}}"
+             min="0" step="1" />
+      <label>{{this.label}}</label>
+    </div>
+    {{/each}}
+  </div>
+</header>

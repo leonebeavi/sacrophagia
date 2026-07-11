@@ -1,0 +1,30 @@
+<section class="tab items {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
+  <div class="items-header">
+    <h2>{{localize "SACROPHAGIA.Tabs.items"}}</h2>
+    {{#if isEditable}}
+    <button type="button" class="item-create" data-action="createItem" data-type="item">
+      <i class="fa-solid fa-plus"></i> {{localize "SACROPHAGIA.Items.Create"}}
+    </button>
+    {{/if}}
+  </div>
+
+  {{#if items.length}}
+  <ol class="items-list">
+    {{#each items}}
+    <li class="item" data-item-id="{{this.id}}">
+      <img class="item-img" src="{{this.img}}" alt="{{this.name}}" />
+      <a class="item-name" data-action="editItem">{{this.name}}</a>
+      {{#if @root.isEditable}}
+      <a class="item-control" data-action="deleteItem"
+         data-tooltip="{{localize 'SACROPHAGIA.Items.Delete'}}"
+         aria-label="{{localize 'SACROPHAGIA.Items.Delete'}}">
+        <i class="fa-solid fa-trash"></i>
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ol>
+  {{else}}
+  <p class="empty">{{localize "SACROPHAGIA.Items.Empty"}}</p>
+  {{/if}}
+</section>
