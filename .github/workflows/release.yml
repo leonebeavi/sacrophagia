@@ -16,14 +16,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # Recompila o CSS a partir das fontes SCSS (garante zip atualizado)
+      - name: Compilar o CSS
+        run: |
+          npm ci
+          npm run css:build
+
       # Lista de inclusão explícita: só o que a instalação precisa
+      # (styles entra só com o css compilado, sem as fontes SCSS)
       - name: Montar o zip do sistema
         run: |
           zip -r sacrophagia.zip \
             system.json \
             sacrophagia.mjs \
             module \
-            styles \
+            styles/sacrophagia.css \
             templates \
             lang \
             LICENSE \
