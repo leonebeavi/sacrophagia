@@ -1,0 +1,9 @@
+# dependências e builds
+node_modules/
+packs/
+*.zip
+
+# ambiente local
+.claude/
+.DS_Store
+Thumbs.db
