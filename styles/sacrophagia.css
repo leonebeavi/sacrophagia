@@ -5,7 +5,7 @@
    Compilar: npm run css:build | Assistir: npm run css:watch
    ============================================================ */
 /* ============================================================
-   Sacrophagia — tema escuro
+   Sacrophagia, tema escuro
    Carne (círculo)  #bb2a45 | Nervo (triângulo) #f2ae2e
    Juízo (quadrado) #25adda | Alma (losango)    #a369dd
    ============================================================ */
@@ -75,16 +75,23 @@
   gap: 0.5rem;
 }
 .sacrophagia.sheet input[type=text],
-.sacrophagia.sheet input[type=number] {
+.sacrophagia.sheet input[type=number],
+.sacrophagia.sheet select {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid var(--sacro-border);
   border-radius: var(--sacro-radius);
   color: var(--sacro-text);
 }
 .sacrophagia.sheet input[type=text]:focus,
-.sacrophagia.sheet input[type=number]:focus {
+.sacrophagia.sheet input[type=number]:focus,
+.sacrophagia.sheet select:focus {
   outline: 1px solid var(--attr-color, var(--sacro-text-dim));
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+.sacrophagia.sheet select option,
+.sacrophagia.sheet select optgroup {
+  background: var(--sacro-bg-1);
+  color: var(--sacro-text);
 }
 
 /* ---------- Header da ficha ---------- */
@@ -136,6 +143,23 @@
   letter-spacing: 0.14em;
   color: var(--sacro-text-dim);
 }
+.sacrophagia .extraordinario {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2px;
+}
+.sacrophagia .extraordinario label {
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sacro-text-dim);
+  white-space: nowrap;
+}
+.sacrophagia .extraordinario select {
+  font-size: 0.85em;
+  padding: 1px 4px;
+}
 
 /* ---------- Bloco de atributos ---------- */
 .sacrophagia .attributes {
@@ -144,13 +168,14 @@
   margin-left: auto;
 }
 .sacrophagia .attribute {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
 }
-.sacrophagia .attribute input[type=number] {
-  width: 44px;
+.sacrophagia .attribute select {
+  width: 52px;
   text-align: center;
   font-weight: 600;
 }
@@ -159,6 +184,113 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--sacro-text-dim);
+}
+.sacrophagia {
+  /* Face efetiva quando um estado altera o passo do atributo */
+}
+.sacrophagia .effective-die {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  padding: 0 4px;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--sacro-bg-0);
+  background: var(--attr-color, var(--sacro-text-dim));
+  border-radius: var(--sacro-radius);
+}
+
+/* ---------- Barra de recursos ---------- */
+.sacrophagia .resources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sacro-border);
+}
+.sacrophagia .resource-row,
+.sacrophagia .derived-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.sacrophagia .resource,
+.sacrophagia .derived {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.sacrophagia .resource > label,
+.sacrophagia .derived > label {
+  font-size: 0.66em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sacro-text-dim);
+  white-space: nowrap;
+}
+.sacrophagia .resource .value,
+.sacrophagia .derived .value {
+  font-weight: 600;
+  font-size: 0.95em;
+}
+.sacrophagia .resource .value .sep,
+.sacrophagia .derived .value .sep {
+  color: var(--sacro-text-dim);
+}
+.sacrophagia .resource.vida > label {
+  color: var(--sacro-carne);
+}
+.sacrophagia .resource.fome > label {
+  color: var(--sacro-alma);
+}
+.sacrophagia .resource.graca > label {
+  color: var(--sacro-juizo);
+}
+.sacrophagia .stepper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.sacrophagia .stepper button {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  line-height: 1;
+  font-size: 0.8em;
+  color: var(--sacro-text-dim);
+  background: var(--sacro-bg-2);
+  border: 1px solid var(--sacro-border);
+  border-radius: var(--sacro-radius);
+  cursor: pointer;
+}
+.sacrophagia .stepper button:hover {
+  color: var(--sacro-text);
+  border-color: var(--sacro-text-dim);
+}
+.sacrophagia .pips {
+  display: flex;
+  gap: 3px;
+}
+.sacrophagia .pips .pip {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--sacro-juizo);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.1s ease, box-shadow 0.1s ease;
+}
+.sacrophagia .pips .pip.filled {
+  background: var(--sacro-juizo);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--sacro-juizo) 70%, transparent);
+}
+.sacrophagia .pips .pip:hover {
+  border-color: var(--sacro-text);
 }
 
 /* ---------- Navegação de abas ---------- */
@@ -183,7 +315,10 @@
   padding: 0.25rem 0.1rem;
 }
 
-/* ---------- Lista de itens ---------- */
+/* ---------- Listas de itens e efeitos ---------- */
+.sacrophagia .item-section + .item-section {
+  margin-top: 0.75rem;
+}
 .sacrophagia .items-header {
   display: flex;
   align-items: center;
@@ -213,6 +348,14 @@
 .sacrophagia .item-create:hover {
   border-color: var(--sacro-carne);
 }
+.sacrophagia .apply-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.sacrophagia .apply-status select {
+  font-size: 0.85em;
+}
 .sacrophagia .items-list {
   list-style: none;
   margin: 0;
@@ -233,6 +376,9 @@
   background: rgba(255, 255, 255, 0.04);
   border-color: var(--sacro-border);
 }
+.sacrophagia .items-list .item.unequipped, .sacrophagia .items-list .item.disabled {
+  opacity: 0.55;
+}
 .sacrophagia .item-img {
   flex: none;
   width: 28px;
@@ -248,6 +394,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.sacrophagia .item-meta {
+  flex: none;
+  font-size: 0.78em;
+  color: var(--sacro-text-dim);
+  white-space: nowrap;
+}
 .sacrophagia .item-control {
   flex: none;
   color: var(--sacro-text-dim);
@@ -255,13 +407,29 @@
 .sacrophagia .item-control:hover {
   color: var(--sacro-carne);
 }
+.sacrophagia .item-control.active {
+  color: var(--sacro-juizo);
+}
 .sacrophagia .empty {
   text-align: center;
   color: var(--sacro-text-dim);
   font-style: italic;
 }
+.sacrophagia .defesas {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--sacro-border);
+}
+.sacrophagia .defesas h2 {
+  margin: 0 0 0.4rem;
+  border: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sacro-text-dim);
+}
 
-/* ---------- Notas / descrição ---------- */
+/* ---------- Notas / descrição / detalhes ---------- */
 .sacrophagia.sheet section.notes,
 .sacrophagia.sheet section.description {
   display: flex;
@@ -270,6 +438,13 @@
 .sacrophagia.sheet section.description {
   flex: 1;
   overflow-y: auto;
+}
+.sacrophagia.sheet section.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.25rem 0.1rem 0.5rem;
+  border-bottom: 1px solid var(--sacro-border);
 }
 
 .sacrophagia prose-mirror {
@@ -281,16 +456,19 @@
   color: var(--sacro-text);
 }
 
-/* ---------- Cartão de rolagem no chat ---------- */
-.sacrophagia.attribute-roll-card {
+/* ---------- Base dos cartões de chat ---------- */
+.sacrophagia.test-card,
+.sacrophagia.damage-card,
+.sacrophagia.soma-card {
   padding: 0.5rem;
   color: var(--sacro-text);
   background: linear-gradient(160deg, var(--sacro-bg-2), var(--sacro-bg-0));
   border: 1px solid var(--sacro-border);
-  border-left: 3px solid var(--attr-color, var(--sacro-border));
   border-radius: var(--sacro-radius);
 }
-.sacrophagia.attribute-roll-card .card-header {
+.sacrophagia.test-card .card-header,
+.sacrophagia.damage-card .card-header,
+.sacrophagia.soma-card .card-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -298,27 +476,318 @@
   margin-bottom: 0.35rem;
   border-bottom: 1px solid var(--sacro-border);
 }
-.sacrophagia.attribute-roll-card .card-header .shape {
+.sacrophagia.test-card .card-header .shape,
+.sacrophagia.damage-card .card-header .shape,
+.sacrophagia.soma-card .card-header .shape {
   width: 16px;
   height: 16px;
 }
-.sacrophagia.attribute-roll-card .card-header h3 {
+.sacrophagia.test-card .card-header h3,
+.sacrophagia.damage-card .card-header h3,
+.sacrophagia.soma-card .card-header h3 {
+  flex: 1;
   margin: 0;
   border: none;
   font-size: 0.95em;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  /* clareia a cor do atributo só no texto (contraste AA); as formas mantêm a cor exata */
-  color: color-mix(in srgb, var(--attr-color, var(--sacro-text)) 60%, white);
+  color: var(--sacro-text-dim);
 }
-.sacrophagia.attribute-roll-card .dice-formula,
-.sacrophagia.attribute-roll-card .dice-total {
-  background: rgba(0, 0, 0, 0.35);
+.sacrophagia.test-card .note,
+.sacrophagia.damage-card .note,
+.sacrophagia.soma-card .note {
+  margin: 0.35rem 0 0;
+  font-size: 0.85em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card .card-buttons,
+.sacrophagia.damage-card .card-buttons,
+.sacrophagia.soma-card .card-buttons {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.sacrophagia.test-card .card-buttons button,
+.sacrophagia.damage-card .card-buttons button,
+.sacrophagia.soma-card .card-buttons button {
+  flex: 1;
+  padding: 3px 8px;
+  font-size: 0.85em;
+  color: var(--sacro-text);
+  background: var(--sacro-bg-2);
   border: 1px solid var(--sacro-border);
   border-radius: var(--sacro-radius);
-  color: var(--sacro-text);
+  cursor: pointer;
 }
-.sacrophagia.attribute-roll-card .dice-total {
+.sacrophagia.test-card .card-buttons button:hover,
+.sacrophagia.damage-card .card-buttons button:hover,
+.sacrophagia.soma-card .card-buttons button:hover {
+  border-color: var(--sacro-carne);
+}
+
+/* ---------- Cartão do Teste em Pódio ---------- */
+.sacrophagia.test-card {
+  --outcome-color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card.outcome-critico {
+  --outcome-color: #e8c34a;
+}
+.sacrophagia.test-card.outcome-sucesso {
+  --outcome-color: #57b06a;
+}
+.sacrophagia.test-card.outcome-triz {
+  --outcome-color: #c9a44a;
+}
+.sacrophagia.test-card.outcome-falha {
+  --outcome-color: #8a7d84;
+}
+.sacrophagia.test-card.outcome-desastre {
+  --outcome-color: #c8384f;
+}
+.sacrophagia.test-card {
+  border-left: 3px solid var(--outcome-color);
+}
+.sacrophagia.test-card .outcome-badge {
+  flex: none;
+  padding: 1px 8px;
+  font-size: 0.78em;
   font-weight: 700;
-  text-shadow: 0 0 8px var(--attr-color, transparent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sacro-bg-0);
+  background: var(--outcome-color);
+  border-radius: var(--sacro-radius);
+}
+.sacrophagia.test-card .target-line,
+.sacrophagia.test-card .weapon-line {
+  margin: 0 0 0.25rem;
+  font-size: 0.85em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card .podium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+}
+.sacrophagia.test-card .player-dice {
+  display: flex;
+  gap: 0.5rem;
+}
+.sacrophagia.test-card .die {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 46px;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--sacro-border);
+  border-radius: var(--sacro-radius);
+}
+.sacrophagia.test-card .die .shape {
+  width: 12px;
+  height: 12px;
+}
+.sacrophagia.test-card .die .value {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+.sacrophagia.test-card .die .die-label {
+  font-size: 0.7em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card .die.success {
+  border-color: var(--attr-color, var(--sacro-border));
+  box-shadow: 0 0 6px color-mix(in srgb, var(--attr-color, transparent) 45%, transparent);
+}
+.sacrophagia.test-card .die.failure {
+  opacity: 0.6;
+}
+.sacrophagia.test-card .die {
+  /* Dado modificado pela jogada Soma (dado extraordinário) */
+}
+.sacrophagia.test-card .die.somado {
+  border-style: dashed;
+  border-color: var(--sacro-alma);
+  opacity: 1;
+}
+.sacrophagia.test-card .versus {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card .difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 46px;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px dashed var(--sacro-border);
+  border-radius: var(--sacro-radius);
+}
+.sacrophagia.test-card .difficulty .value {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+.sacrophagia.test-card .difficulty .die-label {
+  font-size: 0.7em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card .difficulty .dd-results {
+  display: flex;
+  gap: 3px;
+}
+.sacrophagia.test-card .difficulty .dd-results .dd-result {
+  font-size: 0.7em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-card .difficulty .dd-results .dd-result.highest {
+  color: var(--sacro-text);
+  font-weight: 700;
+}
+.sacrophagia.test-card .economy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+.sacrophagia.test-card .economy .economy-item {
+  padding: 1px 7px;
+  font-size: 0.78em;
+  font-weight: 600;
+  border-radius: var(--sacro-radius);
+  border: 1px solid var(--sacro-border);
+}
+.sacrophagia.test-card .economy .economy-item.graca {
+  color: var(--sacro-juizo);
+  border-color: var(--sacro-juizo);
+}
+.sacrophagia.test-card .economy .economy-item.praga {
+  color: var(--sacro-carne);
+  border-color: var(--sacro-carne);
+}
+.sacrophagia.test-card .economy .economy-item.fome {
+  color: var(--sacro-alma);
+  border-color: var(--sacro-alma);
+}
+.sacrophagia.test-card .economy .economy-item.manual-note {
+  color: var(--sacro-text-dim);
+  font-style: italic;
+}
+
+/* ---------- Cartão de dano ---------- */
+.sacrophagia.damage-card {
+  border-left: 3px solid var(--sacro-carne);
+}
+.sacrophagia.damage-card .weapon-line {
+  margin: 0 0 0.25rem;
+  font-size: 0.85em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.damage-card .damage-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+}
+.sacrophagia.damage-card .damage-total .value {
+  font-size: 1.6em;
+  font-weight: 700;
+  text-shadow: 0 0 8px color-mix(in srgb, var(--sacro-carne) 60%, transparent);
+}
+.sacrophagia.damage-card .damage-total .tipo {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.damage-card.critico .outcome-badge {
+  flex: none;
+  padding: 1px 8px;
+  font-size: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sacro-bg-0);
+  background: #e8c34a;
+  border-radius: var(--sacro-radius);
+}
+
+/* ---------- Cartão da Soma (dado extraordinário) ---------- */
+.sacrophagia.soma-card {
+  border-left: 3px solid var(--attr-color, var(--sacro-alma));
+}
+.sacrophagia.soma-card .soma-line {
+  margin: 0;
+  font-size: 0.9em;
+}
+.sacrophagia.soma-card .note.success {
+  color: #57b06a;
+}
+.sacrophagia.soma-card .note.failure {
+  color: #c8384f;
+}
+
+/* ---------- Diálogo de teste ---------- */
+.sacrophagia.test-dialog .test-dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.25rem 0;
+}
+.sacrophagia.test-dialog .target-note {
+  margin: 0;
+  font-size: 0.85em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.test-dialog .hint {
+  margin: 2px 0 0;
+  font-size: 0.75em;
+  color: var(--sacro-text-dim);
+}
+
+/* ---------- Tracker de Praga ---------- */
+.sacrophagia.praga-tracker .praga-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem;
+}
+.sacrophagia.praga-tracker .praga-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sacrophagia.praga-tracker .praga-value .value {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: var(--sacro-carne);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--sacro-carne) 60%, transparent);
+}
+.sacrophagia.praga-tracker .praga-value .label {
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--sacro-text-dim);
+}
+.sacrophagia.praga-tracker .praga-control {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  color: var(--sacro-text-dim);
+  background: var(--sacro-bg-2);
+  border: 1px solid var(--sacro-border);
+  border-radius: var(--sacro-radius);
+  cursor: pointer;
+}
+.sacrophagia.praga-tracker .praga-control:hover {
+  color: var(--sacro-text);
+  border-color: var(--sacro-carne);
 }

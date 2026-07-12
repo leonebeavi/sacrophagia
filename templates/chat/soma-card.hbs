@@ -1,0 +1,18 @@
+<div class="sacrophagia soma-card attribute-{{attribute.key}}">
+  <header class="card-header">
+    <span class="shape shape-{{attribute.shape}}"></span>
+    <h3>{{localize "SACROPHAGIA.Chat.SomaTitle"}}</h3>
+  </header>
+
+  <p class="soma-line">
+    {{localize "SACROPHAGIA.Chat.SomaNote" de=de valor=valor label=attribute.label antes=antes depois=depois}}
+  </p>
+
+  <p class="note {{#if sucesso}}success{{else}}failure{{/if}}">
+    {{#if sucesso}}
+    {{localize "SACROPHAGIA.Chat.SomaSucesso" dd=highest}}
+    {{else}}
+    {{localize "SACROPHAGIA.Chat.SomaFalha" dd=highest}}
+    {{/if}}
+  </p>
+</div>

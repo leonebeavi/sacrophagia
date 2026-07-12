@@ -1,0 +1,25 @@
+<section class="details">
+  {{#if isArma}}
+  {{formGroup fields.atributo value=system.atributo localize=true}}
+  {{formGroup fields.dano value=system.dano}}
+  {{formGroup fields.tipo value=system.tipo localize=true}}
+  {{#if isElemental}}
+  {{formGroup fields.elemento value=system.elemento}}
+  {{/if}}
+  {{/if}}
+
+  {{#if isArmadura}}
+  {{formGroup fields.ca value=system.ca}}
+  {{formGroup fields.acumulavel value=system.acumulavel}}
+  {{formGroup fields.marcados value=system.marcados}}
+  {{formGroup fields.equipada value=system.equipada}}
+  {{/if}}
+
+  {{#if isCapacidade}}
+  {{formGroup fields.tier value=system.tier localize=true}}
+  {{/if}}
+
+  {{#if isGenerico}}
+  {{formGroup fields.quantidade value=system.quantidade}}
+  {{/if}}
+</section>

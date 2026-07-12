@@ -1,0 +1,42 @@
+<div class="test-dialog-body">
+  {{#if targetName}}
+  <p class="target-note">{{localize "SACROPHAGIA.Dialog.Target" name=targetName}}</p>
+  {{/if}}
+
+  <div class="form-group">
+    <label>{{localize "SACROPHAGIA.Dialog.Primary"}}</label>
+    <select name="primary">
+      {{#each primary}}
+      <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "SACROPHAGIA.Dialog.Secondary"}}</label>
+    <select name="secondary">
+      {{#each secondary}}
+      <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "SACROPHAGIA.Dialog.DDFaces"}}</label>
+    <select name="ddFaces">
+      {{#each difficulties}}
+      <option value="{{this.faces}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "SACROPHAGIA.Dialog.DDCount"}}</label>
+    <select name="ddCount">
+      {{#each counts}}
+      <option value="{{this.n}}" {{#if this.selected}}selected{{/if}}>{{this.n}}</option>
+      {{/each}}
+    </select>
+    <p class="hint">{{localize "SACROPHAGIA.Dialog.DDCountHint"}}</p>
+  </div>
+</div>

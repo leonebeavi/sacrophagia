@@ -1,0 +1,57 @@
+<section class="tab effects {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
+  <div class="items-header">
+    <h2>{{localize "SACROPHAGIA.Effects.Title"}}</h2>
+    {{#if isEditable}}
+    <div class="apply-status">
+      <select data-status-select>
+        <optgroup label="{{localize 'SACROPHAGIA.Effects.GrupoEstados'}}">
+          {{#each statusOptions.estados}}
+          <option value="{{this.id}}">{{this.label}}</option>
+          {{/each}}
+        </optgroup>
+        <optgroup label="{{localize 'SACROPHAGIA.Effects.GrupoCondicoes'}}">
+          {{#each statusOptions.condicoes}}
+          <option value="{{this.id}}">{{this.label}}</option>
+          {{/each}}
+        </optgroup>
+      </select>
+      <button type="button" class="item-create" data-action="applyStatus">
+        <i class="fa-solid fa-plus"></i> {{localize "SACROPHAGIA.Effects.Apply"}}
+      </button>
+    </div>
+    {{/if}}
+  </div>
+
+  {{#if effects.length}}
+  <ol class="items-list effects-list">
+    {{#each effects}}
+    <li class="item effect {{#if this.disabled}}disabled{{/if}}" data-effect-id="{{this.id}}">
+      <img class="item-img" src="{{this.img}}" alt="{{this.name}}" />
+      <a class="item-name" data-action="editEffect">{{this.name}}</a>
+      <span class="item-meta">{{localize (concat "SACROPHAGIA.Effects.Kind." this.kind)}}</span>
+      <a class="item-control" data-action="toggleEffect"
+         data-tooltip="{{localize 'SACROPHAGIA.Effects.Toggle'}}"
+         aria-label="{{localize 'SACROPHAGIA.Effects.Toggle'}}">
+        <i class="fa-solid {{#if this.disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i>
+      </a>
+      {{#if @root.isEditable}}
+      <a class="item-control" data-action="deleteEffect"
+         data-tooltip="{{localize 'SACROPHAGIA.Effects.Delete'}}"
+         aria-label="{{localize 'SACROPHAGIA.Effects.Delete'}}">
+        <i class="fa-solid fa-trash"></i>
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ol>
+  {{else}}
+  <p class="empty">{{localize "SACROPHAGIA.Effects.Empty"}}</p>
+  {{/if}}
+
+  <div class="defesas">
+    <h2>{{localize "SACROPHAGIA.Defesas.Title"}}</h2>
+    {{formGroup fields.defesas.fields.vulnerabilidades value=system.defesas.vulnerabilidades localize=true}}
+    {{formGroup fields.defesas.fields.resistencias value=system.defesas.resistencias localize=true}}
+    {{formGroup fields.defesas.fields.imunidades value=system.defesas.imunidades localize=true}}
+  </div>
+</section>

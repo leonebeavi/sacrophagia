@@ -1,0 +1,30 @@
+<div class="sacrophagia damage-card {{#if critico}}critico{{/if}}">
+  <header class="card-header">
+    <h3>{{localize "SACROPHAGIA.Chat.DamageTitle"}}</h3>
+    {{#if critico}}<span class="outcome-badge">{{localize "SACROPHAGIA.Outcomes.critico"}}</span>{{/if}}
+  </header>
+
+  {{#if arma}}
+  <p class="weapon-line">{{arma.name}}</p>
+  {{/if}}
+
+  <div class="damage-total">
+    <span class="value">{{total}}</span>
+    <span class="tipo">{{tipo}}</span>
+  </div>
+
+  {{#if gula}}
+  <p class="note gula-note">{{localize "SACROPHAGIA.Chat.GulaAplicada" valor=gula.valor de=gula.de}}</p>
+  {{/if}}
+
+  <footer class="card-buttons">
+    {{#if canGula}}
+    <button type="button" data-action="gula">
+      <i class="fa-solid fa-utensils"></i> {{localize "SACROPHAGIA.Chat.Gula"}}
+    </button>
+    {{/if}}
+    <button type="button" data-action="aplicarDano">
+      <i class="fa-solid fa-heart-crack"></i> {{localize "SACROPHAGIA.Chat.AplicarDano"}}
+    </button>
+  </footer>
+</div>

@@ -9,15 +9,32 @@
     <input class="charname" type="text" name="name" value="{{actor.name}}"
            placeholder="{{localize 'SACROPHAGIA.Sheet.Name'}}" />
     <span class="doc-type">{{localize (concat "TYPES.Actor." actor.type)}}</span>
+    <div class="extraordinario">
+      <label data-tooltip="{{localize 'SACROPHAGIA.Sheet.ExtraordinarioHint'}}">
+        {{localize "SACROPHAGIA.Sheet.Extraordinario"}}
+      </label>
+      <select name="system.extraordinario.tier">
+        {{#each tierOptions}}
+        <option value="{{this.tier}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
   </div>
 
   <div class="attributes">
     {{#each attributes}}
     <div class="attribute attribute-{{this.key}}" data-attribute="{{this.key}}">
-      <button type="button" class="shape shape-{{this.shape}}" data-action="rollAttribute"
-              data-tooltip="{{this.label}}" aria-label="{{this.label}}"></button>
-      <input type="number" name="system.attributes.{{this.key}}.value" value="{{this.value}}"
-             min="0" step="1" />
+      <button type="button" class="shape shape-{{this.shape}}" data-action="rollTest"
+              data-tooltip="{{localize 'SACROPHAGIA.Sheet.RollTest' attribute=this.label}}"
+              aria-label="{{localize 'SACROPHAGIA.Sheet.RollTest' attribute=this.label}}"></button>
+      <select name="system.attributes.{{this.key}}.step">
+        {{#each this.options}}
+        <option value="{{this.step}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+      {{#if this.modified}}
+      <span class="effective-die" data-tooltip="{{localize 'SACROPHAGIA.Sheet.EstadoAtivo'}}">{{this.die}}</span>
+      {{/if}}
       <label>{{this.label}}</label>
     </div>
     {{/each}}

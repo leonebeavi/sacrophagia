@@ -1,0 +1,22 @@
+<div class="praga-body">
+  {{#if isGM}}
+  <button type="button" class="praga-control" data-action="pragaMenos"
+          data-tooltip="{{localize 'SACROPHAGIA.Praga.Remove'}}"
+          aria-label="{{localize 'SACROPHAGIA.Praga.Remove'}}">
+    <i class="fa-solid fa-minus"></i>
+  </button>
+  {{/if}}
+
+  <div class="praga-value">
+    <span class="value">{{praga}}</span>
+    <span class="label">{{localize "SACROPHAGIA.Praga.Title"}}</span>
+  </div>
+
+  {{#if isGM}}
+  <button type="button" class="praga-control" data-action="pragaMais"
+          data-tooltip="{{localize 'SACROPHAGIA.Praga.Add'}}"
+          aria-label="{{localize 'SACROPHAGIA.Praga.Add'}}">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+  {{/if}}
+</div>

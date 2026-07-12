@@ -1,0 +1,69 @@
+<div class="sacrophagia test-card outcome-{{outcome.key}}">
+  <header class="card-header">
+    <h3>{{localize "SACROPHAGIA.Chat.TestTitle"}}</h3>
+    <span class="outcome-badge">{{outcome.label}}</span>
+  </header>
+
+  {{#if targetName}}
+  <p class="target-line">{{localize "SACROPHAGIA.Chat.Versus" name=targetName}}</p>
+  {{/if}}
+
+  <div class="podium">
+    <div class="player-dice">
+      {{#each playerDice}}
+      <div class="die attribute-{{this.attribute}} {{#if this.success}}success{{else}}failure{{/if}} {{#if this.somado}}somado{{/if}}"
+           data-tooltip="{{this.label}} ({{this.die}})">
+        <span class="shape shape-{{this.shape}}"></span>
+        <span class="value">{{this.total}}</span>
+        <span class="die-label">{{this.die}}</span>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="versus">{{localize "SACROPHAGIA.Chat.Vs"}}</div>
+
+    <div class="difficulty" data-tooltip="{{difficulty.aptidao}}">
+      <span class="value">{{difficulty.highest}}</span>
+      <span class="die-label">{{difficulty.count}}{{difficulty.die}}</span>
+      {{#if difficulty.results.length}}
+      <div class="dd-results">
+        {{#each difficulty.results}}
+        <span class="dd-result {{#if this.highest}}highest{{/if}}">{{this.result}}</span>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+  {{#if economy.show}}
+  <div class="economy {{#if economy.manual}}manual{{/if}}">
+    {{#if economy.graca}}<span class="economy-item graca">{{localize "SACROPHAGIA.Chat.GracaGanha" n=economy.graca}}</span>{{/if}}
+    {{#if economy.praga}}<span class="economy-item praga">{{localize "SACROPHAGIA.Chat.PragaGanha" n=economy.praga}}</span>{{/if}}
+    {{#if economy.fome}}<span class="economy-item fome">{{localize "SACROPHAGIA.Chat.FomeLimpa"}}</span>{{/if}}
+    {{#if economy.manual}}<span class="economy-item manual-note">{{localize "SACROPHAGIA.Chat.EconomiaManual"}}</span>{{/if}}
+  </div>
+  {{/if}}
+
+  {{#each notes}}
+  <p class="note">{{this}}</p>
+  {{/each}}
+
+  {{#if arma}}
+  <p class="weapon-line">{{arma.name}}: +{{arma.dano}} {{arma.tipo}}</p>
+  {{/if}}
+
+  {{#if hasButtons}}
+  <footer class="card-buttons">
+    {{#if canSoma}}
+    <button type="button" data-action="somarDE">
+      <i class="fa-solid fa-bolt"></i> {{localize "SACROPHAGIA.Chat.SomarDE"}}
+    </button>
+    {{/if}}
+    {{#if canDamage}}
+    <button type="button" data-action="rolarDano">
+      <i class="fa-solid fa-burst"></i> {{localize "SACROPHAGIA.Chat.RolarDano"}}
+    </button>
+    {{/if}}
+  </footer>
+  {{/if}}
+</div>

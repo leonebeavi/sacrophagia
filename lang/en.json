@@ -5,7 +5,14 @@
       "npc": "NPC"
     },
     "Item": {
+      "arma": "Weapon",
+      "armadura": "Armor",
+      "capacidade": "Capacity",
       "item": "Item"
+    },
+    "ChatMessage": {
+      "teste": "Podium Test",
+      "dano": "Damage"
     }
   },
   "SACROPHAGIA": {
@@ -15,45 +22,309 @@
       "juizo": "Juízo",
       "alma": "Alma"
     },
+    "Difficulty": {
+      "4": "Inept",
+      "6": "Capable",
+      "8": "Skilled",
+      "10": "Masterful",
+      "12": "Sublime"
+    },
+    "Tiers": {
+      "0": "Common (no ED)",
+      "1": "Tier 1 (d4)",
+      "2": "Tier 2 (d6)",
+      "3": "Tier 3 (d8)",
+      "4": "Tier 4 (d10)",
+      "5": "Tier 5 (d12)"
+    },
+    "Damage": {
+      "cortante": "Slashing",
+      "perfurante": "Piercing",
+      "contuso": "Bludgeoning",
+      "elemental": "Elemental"
+    },
+    "Degraus": {
+      "menor": "Minor Damage",
+      "maior": "Major Damage",
+      "severo": "Severe Damage"
+    },
+    "Outcomes": {
+      "critico": "Critical!",
+      "sucesso": "Success",
+      "triz": "Narrow Success",
+      "falha": "Failure",
+      "desastre": "Disaster!"
+    },
+    "Duracoes": {
+      "efemero": "Fleeting",
+      "temporario": "Temporary",
+      "persistente": "Persistent",
+      "permanente": "Permanent"
+    },
+    "Estados": {
+      "forte": "Strong",
+      "rapido": "Quick",
+      "lucido": "Lucid",
+      "resoluto": "Resolute",
+      "fraco": "Weak",
+      "lento": "Slow",
+      "atordoado": "Dazed",
+      "abalado": "Shaken",
+      "revigorado": "Invigorated",
+      "sereno": "Serene",
+      "fervoroso": "Fervent",
+      "afiado": "Sharp",
+      "exausto": "Exhausted",
+      "perturbado": "Disturbed",
+      "enfermo": "Sick",
+      "enfurecido": "Enraged",
+      "exaltado": "Exalted",
+      "arrasado": "Devastated"
+    },
+    "Condicoes": {
+      "surpreso": "Surprised",
+      "flanqueado": "Flanked",
+      "oculto": "Hidden",
+      "protegido": "Protected",
+      "elevado": "Elevated",
+      "asCegas": "Blinded",
+      "instavel": "Unstable",
+      "preparado": "Prepared"
+    },
     "Tabs": {
       "items": "Items",
+      "effects": "States",
       "notes": "Notes"
     },
     "Sheets": {
-      "Character": "Sacrophagia — Character",
-      "Npc": "Sacrophagia — NPC",
-      "Item": "Sacrophagia — Item"
+      "Character": "Sacrophagia: Character",
+      "Npc": "Sacrophagia: NPC",
+      "Item": "Sacrophagia: Item"
     },
     "Sheet": {
       "Name": "Name",
-      "EditImage": "Change image"
+      "EditImage": "Change image",
+      "Extraordinario": "Extraordinary Die",
+      "ExtraordinarioHint": "The character's capacities: the tier of play, from d4 to d12.",
+      "RollTest": "Test {attribute}",
+      "EstadoAtivo": "Effective die face with active states",
+      "Diminuir": "Decrease",
+      "Aumentar": "Increase"
+    },
+    "Resources": {
+      "vida": "Life",
+      "fome": "Hunger",
+      "graca": "Grace",
+      "bens": "Goods",
+      "esquiva": "Dodge",
+      "esquivaHint": "Difficulty pool against attacks: 2 Nervo dice.",
+      "ca": "AC",
+      "pele": "Skin Threshold",
+      "peleHint": "Max Life + AC. Damage reaching this threshold marks 2 Life.",
+      "carne": "Flesh Threshold",
+      "carneHint": "Twice max Life + AC. Damage reaching this threshold marks 3 Life.",
+      "armadura": "Armor",
+      "armaduraHint": "Marked armor slots. Block: each slot reduces the damage grade by one."
     },
     "Items": {
-      "New": "New Item",
-      "Create": "Create item",
+      "Create": "Create",
       "Delete": "Delete item",
-      "Empty": "Nothing here yet."
+      "Empty": "Nothing here yet.",
+      "Equipar": "Equip or unequip",
+      "Usar": "Use",
+      "NewNames": {
+        "arma": "New weapon",
+        "armadura": "New armor",
+        "capacidade": "New capacity",
+        "item": "New item"
+      },
+      "Sections": {
+        "arma": "Weapons",
+        "armadura": "Armor",
+        "capacidade": "Capacities",
+        "item": "Other"
+      }
+    },
+    "Effects": {
+      "Title": "States and Conditions",
+      "Apply": "Apply",
+      "Toggle": "Enable or suspend",
+      "Delete": "Remove",
+      "Empty": "No active state or condition.",
+      "GrupoEstados": "States",
+      "GrupoCondicoes": "Conditions",
+      "Kind": {
+        "estado": "State",
+        "condicao": "Condition",
+        "efeito": "Effect"
+      }
+    },
+    "Defesas": {
+      "Title": "Defenses"
     },
     "Chat": {
-      "AttributeTest": "{attribute} Test"
+      "TestTitle": "Podium Test",
+      "Vs": "vs",
+      "Versus": "Against {name}",
+      "GracaGanha": "+{n} Grace",
+      "PragaGanha": "+{n} Plague (GM)",
+      "FomeLimpa": "Clears 1 Hunger",
+      "EconomiaManual": "Distribute Grace and Plague manually",
+      "TrizNote": "The goal is achieved, but a negative consequence may follow, at the GM's discretion.",
+      "DesastreNote": "The GM gets a free, immediate Plague play. The result cannot be modified by the extraordinary die.",
+      "SomarDE": "Add ED",
+      "SomaTitle": "Add",
+      "SomaNoCartao": "Extraordinary die added: +{valor}. The goal result was modified; the distributed Grace and Plague do not change.",
+      "PragaPendente": "No GM connected: add the Plague manually on the tracker.",
+      "SomaNote": "The extraordinary die ({de}) adds {valor} to the {label} die: {antes} becomes {depois}.",
+      "SomaSucesso": "Reaches DD {dd}: the goal succeeds.",
+      "SomaFalha": "Still does not reach DD {dd}.",
+      "RolarDano": "Roll Damage",
+      "DamageTitle": "Damage",
+      "AplicarDano": "Apply Damage",
+      "Gula": "Gluttony",
+      "GulaNote": "Gluttony: the extraordinary die ({de}) adds {valor} to the damage.",
+      "GulaAplicada": "Gluttony applied: +{valor} ({de})",
+      "DanoAplicado": "{name} marks {marcas} Life: {grau}{detalhes}",
+      "BloqueioNote": "Block: {n}",
+      "SemDano": "no damage",
+      "Ajuste": {
+        "imune": "immune",
+        "resistente": "resistant, half",
+        "vulneravel": "vulnerable, double"
+      }
+    },
+    "Dialog": {
+      "TestTitle": "Configure Podium Test",
+      "Target": "Target: {name}",
+      "Primary": "First die",
+      "Secondary": "Second die",
+      "DDFaces": "Difficulty Die",
+      "DDCount": "DD count",
+      "DDCountHint": "Scene conditions add or remove difficulty dice (1 to 3, always the same face).",
+      "Roll": "Roll",
+      "Cancel": "Cancel",
+      "BloqueioTitle": "Block",
+      "BloqueioHint": "Grade {grau} damage. Free armor slots: {livres}. Each marked slot reduces the grade by one; reducing Minor Damage negates it.",
+      "BloqueioLabel": "Slots to mark",
+      "BloqueioOk": "Confirm"
+    },
+    "Warn": {
+      "SemPermissao": "You do not control this character.",
+      "SemPermissaoAlvo": "No permission to modify {name}.",
+      "SomaAplicada": "The extraordinary die was already added to this test.",
+      "SomaDesastre": "A disaster cannot be modified by the extraordinary die.",
+      "SemDE": "This character has no extraordinary die.",
+      "SemGraca": "Not enough Grace (Add costs 1).",
+      "SemPraga": "Not enough Plague (costs 1).",
+      "SemArma": "The weapon for this test was not found.",
+      "SemSucesso": "Only successful attacks deal damage.",
+      "GulaAplicada": "Gluttony was already applied to this damage.",
+      "FomeCheia": "The Hunger track is completely marked; the Gluttony cost cannot be paid.",
+      "PragaSemGM": "No GM connected: apply the Plague manually on the tracker.",
+      "SemAlvo": "Target or select at least one token."
+    },
+    "Praga": {
+      "Title": "Plague",
+      "Add": "Add Plague",
+      "Remove": "Spend Plague"
+    },
+    "Settings": {
+      "Praga": {
+        "Name": "GM Plague pool"
+      },
+      "AutomacaoEconomia": {
+        "Name": "Economy automation",
+        "Hint": "Applies Grace, Plague and Hunger automatically on each test. When off, the card only records the distribution for manual application."
+      },
+      "MostrarPraga": {
+        "Name": "Show Plague tracker",
+        "Hint": "Displays the GM Plague pool when the world loads."
+      }
     },
     "Actor": {
       "base": {
         "FIELDS": {
           "attributes": {
-            "carne": { "value": { "label": "Carne" } },
-            "nervo": { "value": { "label": "Nervo" } },
-            "juizo": { "value": { "label": "Juízo" } },
-            "alma": { "value": { "label": "Alma" } }
+            "carne": {
+              "step": { "label": "Carne" },
+              "bonus": { "label": "State steps (Carne)" }
+            },
+            "nervo": {
+              "step": { "label": "Nervo" },
+              "bonus": { "label": "State steps (Nervo)" }
+            },
+            "juizo": {
+              "step": { "label": "Juízo" },
+              "bonus": { "label": "State steps (Juízo)" }
+            },
+            "alma": {
+              "step": { "label": "Alma" },
+              "bonus": { "label": "State steps (Alma)" }
+            }
+          },
+          "extraordinario": {
+            "tier": { "label": "Extraordinary Die" }
+          },
+          "vida": {
+            "value": { "label": "Marked Life" }
+          },
+          "defesas": {
+            "vulnerabilidades": { "label": "Vulnerabilities" },
+            "resistencias": { "label": "Resistances" },
+            "imunidades": { "label": "Immunities" }
           },
           "biography": { "label": "Biography" }
         }
+      },
+      "character": {
+        "FIELDS": {
+          "fome": {
+            "value": { "label": "Marked Hunger" }
+          },
+          "graca": {
+            "value": { "label": "Grace" }
+          },
+          "bens": {
+            "value": { "label": "Goods" },
+            "max": { "label": "Goods (max)" }
+          }
+        }
+      },
+      "npc": {
+        "FIELDS": {}
       }
     },
     "Item": {
       "base": {
         "FIELDS": {
           "description": { "label": "Description" }
+        }
+      },
+      "arma": {
+        "FIELDS": {
+          "dano": { "label": "Fixed damage" },
+          "tipo": { "label": "Damage type" },
+          "elemento": { "label": "Element" },
+          "atributo": { "label": "Attack attribute" }
+        }
+      },
+      "armadura": {
+        "FIELDS": {
+          "ca": { "label": "Armor Class" },
+          "acumulavel": { "label": "Stackable (+)" },
+          "marcados": { "label": "Marked slots" },
+          "equipada": { "label": "Equipped" }
+        }
+      },
+      "capacidade": {
+        "FIELDS": {
+          "tier": { "label": "Required tier" }
+        }
+      },
+      "item": {
+        "FIELDS": {
+          "quantidade": { "label": "Quantity" }
         }
       }
     }

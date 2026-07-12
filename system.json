@@ -2,7 +2,7 @@
   "id": "sacrophagia",
   "title": "Sacrophagia",
   "description": "Sistema autoral para Foundry VTT construído sobre os quatro atributos: Carne, Nervo, Juízo e Alma.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -22,7 +22,14 @@
       "npc": {}
     },
     "Item": {
+      "arma": {},
+      "armadura": {},
+      "capacidade": {},
       "item": {}
+    },
+    "ChatMessage": {
+      "teste": {},
+      "dano": {}
     }
   },
   "grid": {
@@ -30,7 +37,7 @@
     "distance": 1,
     "units": "m"
   },
-  "socket": false,
+  "socket": true,
   "packs": [],
   "flags": {
     "hotReload": {
@@ -40,7 +47,7 @@
   },
   "url": "https://github.com/leonebeavi/sacrophagia",
   "manifest": "https://github.com/leonebeavi/sacrophagia/releases/latest/download/system.json",
-  "download": "https://github.com/leonebeavi/sacrophagia/releases/download/0.1.0/sacrophagia.zip",
+  "download": "https://github.com/leonebeavi/sacrophagia/releases/download/0.2.0/sacrophagia.zip",
   "license": "LICENSE",
   "readme": "README.md"
 }

@@ -1,0 +1,78 @@
+<section class="resources">
+  <div class="resource-row">
+    <div class="resource vida">
+      <label>{{localize "SACROPHAGIA.Resources.vida"}}</label>
+      <div class="stepper">
+        <button type="button" data-action="adjustResource" data-resource="vida" data-delta="-1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Diminuir'}}">-</button>
+        <span class="value">{{system.vida.value}}<span class="sep">/</span>{{system.vida.max}}</span>
+        <button type="button" data-action="adjustResource" data-resource="vida" data-delta="1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Aumentar'}}">+</button>
+      </div>
+    </div>
+
+    {{#if isCharacter}}
+    <div class="resource fome">
+      <label>{{localize "SACROPHAGIA.Resources.fome"}}</label>
+      <div class="stepper">
+        <button type="button" data-action="adjustResource" data-resource="fome" data-delta="-1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Diminuir'}}">-</button>
+        <span class="value">{{system.fome.value}}<span class="sep">/</span>{{system.fome.max}}</span>
+        <button type="button" data-action="adjustResource" data-resource="fome" data-delta="1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Aumentar'}}">+</button>
+      </div>
+    </div>
+
+    <div class="resource graca">
+      <label>{{localize "SACROPHAGIA.Resources.graca"}}</label>
+      <div class="pips">
+        {{#each gracaPips}}
+        <button type="button" class="pip {{#if this.filled}}filled{{/if}}"
+                data-action="setGraca" data-index="{{this.index}}"
+                aria-label="{{localize 'SACROPHAGIA.Resources.graca'}} {{this.index}}"></button>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="resource bens">
+      <label>{{localize "SACROPHAGIA.Resources.bens"}}</label>
+      <div class="stepper">
+        <button type="button" data-action="adjustResource" data-resource="bens" data-delta="-1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Diminuir'}}">-</button>
+        <span class="value">{{system.bens.value}}<span class="sep">/</span>{{system.bens.max}}</span>
+        <button type="button" data-action="adjustResource" data-resource="bens" data-delta="1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Aumentar'}}">+</button>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="derived-row">
+    <div class="derived esquiva" data-tooltip="{{localize 'SACROPHAGIA.Resources.esquivaHint'}}">
+      <label>{{localize "SACROPHAGIA.Resources.esquiva"}}</label>
+      <span class="value">2d{{system.esquiva.faces}}</span>
+    </div>
+    <div class="derived ca">
+      <label>{{localize "SACROPHAGIA.Resources.ca"}}</label>
+      <span class="value">{{system.armadura.ca}}</span>
+    </div>
+    <div class="derived pele" data-tooltip="{{localize 'SACROPHAGIA.Resources.peleHint'}}">
+      <label>{{localize "SACROPHAGIA.Resources.pele"}}</label>
+      <span class="value">{{system.limiares.pele}}</span>
+    </div>
+    <div class="derived carne" data-tooltip="{{localize 'SACROPHAGIA.Resources.carneHint'}}">
+      <label>{{localize "SACROPHAGIA.Resources.carne"}}</label>
+      <span class="value">{{system.limiares.carne}}</span>
+    </div>
+    <div class="resource armadura" data-tooltip="{{localize 'SACROPHAGIA.Resources.armaduraHint'}}">
+      <label>{{localize "SACROPHAGIA.Resources.armadura"}}</label>
+      <div class="stepper">
+        <button type="button" data-action="adjustResource" data-resource="armadura" data-delta="-1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Diminuir'}}">-</button>
+        <span class="value">{{system.armadura.marcados}}<span class="sep">/</span>{{system.armadura.espacos}}</span>
+        <button type="button" data-action="adjustResource" data-resource="armadura" data-delta="1"
+                aria-label="{{localize 'SACROPHAGIA.Sheet.Aumentar'}}">+</button>
+      </div>
+    </div>
+  </div>
+</section>

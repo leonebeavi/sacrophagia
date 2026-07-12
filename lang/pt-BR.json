@@ -5,7 +5,14 @@
       "npc": "NPC"
     },
     "Item": {
+      "arma": "Arma",
+      "armadura": "Armadura",
+      "capacidade": "Capacidade",
       "item": "Item"
+    },
+    "ChatMessage": {
+      "teste": "Teste em Pódio",
+      "dano": "Dano"
     }
   },
   "SACROPHAGIA": {
@@ -15,45 +22,309 @@
       "juizo": "Juízo",
       "alma": "Alma"
     },
+    "Difficulty": {
+      "4": "Inapto",
+      "6": "Apto",
+      "8": "Hábil",
+      "10": "Exímio",
+      "12": "Sublime"
+    },
+    "Tiers": {
+      "0": "Comum (sem DE)",
+      "1": "Tier 1 (d4)",
+      "2": "Tier 2 (d6)",
+      "3": "Tier 3 (d8)",
+      "4": "Tier 4 (d10)",
+      "5": "Tier 5 (d12)"
+    },
+    "Damage": {
+      "cortante": "Cortante",
+      "perfurante": "Perfurante",
+      "contuso": "Contuso",
+      "elemental": "Elemental"
+    },
+    "Degraus": {
+      "menor": "Dano Menor",
+      "maior": "Dano Maior",
+      "severo": "Dano Severo"
+    },
+    "Outcomes": {
+      "critico": "Crítico!",
+      "sucesso": "Sucesso",
+      "triz": "Sucesso Por Um Triz",
+      "falha": "Falha",
+      "desastre": "Desastre!"
+    },
+    "Duracoes": {
+      "efemero": "Efêmero",
+      "temporario": "Temporário",
+      "persistente": "Persistente",
+      "permanente": "Permanente"
+    },
+    "Estados": {
+      "forte": "Forte",
+      "rapido": "Rápido",
+      "lucido": "Lúcido",
+      "resoluto": "Resoluto",
+      "fraco": "Fraco",
+      "lento": "Lento",
+      "atordoado": "Atordoado",
+      "abalado": "Abalado",
+      "revigorado": "Revigorado",
+      "sereno": "Sereno",
+      "fervoroso": "Fervoroso",
+      "afiado": "Afiado",
+      "exausto": "Exausto",
+      "perturbado": "Perturbado",
+      "enfermo": "Enfermo",
+      "enfurecido": "Enfurecido",
+      "exaltado": "Exaltado",
+      "arrasado": "Arrasado"
+    },
+    "Condicoes": {
+      "surpreso": "Surpreso",
+      "flanqueado": "Flanqueado",
+      "oculto": "Oculto",
+      "protegido": "Protegido",
+      "elevado": "Elevado",
+      "asCegas": "Às Cegas",
+      "instavel": "Instável",
+      "preparado": "Preparado"
+    },
     "Tabs": {
       "items": "Itens",
+      "effects": "Estados",
       "notes": "Notas"
     },
     "Sheets": {
-      "Character": "Sacrophagia — Personagem",
-      "Npc": "Sacrophagia — NPC",
-      "Item": "Sacrophagia — Item"
+      "Character": "Sacrophagia: Personagem",
+      "Npc": "Sacrophagia: NPC",
+      "Item": "Sacrophagia: Item"
     },
     "Sheet": {
       "Name": "Nome",
-      "EditImage": "Trocar imagem"
+      "EditImage": "Trocar imagem",
+      "Extraordinario": "Dado Extraordinário",
+      "ExtraordinarioHint": "As capacidades do personagem: o tier de jogo, de d4 a d12.",
+      "RollTest": "Testar {attribute}",
+      "EstadoAtivo": "Face efetiva com estados aplicados",
+      "Diminuir": "Diminuir",
+      "Aumentar": "Aumentar"
+    },
+    "Resources": {
+      "vida": "Vida",
+      "fome": "Fome",
+      "graca": "Graça",
+      "bens": "Bens",
+      "esquiva": "Esquiva",
+      "esquivaHint": "Parada de dificuldade contra ataques: 2 dados de Nervo.",
+      "ca": "CA",
+      "pele": "Limiar da Pele",
+      "peleHint": "Vida máxima + CA. Dano que alcança este limiar marca 2 de Vida.",
+      "carne": "Limiar da Carne",
+      "carneHint": "Dobro da Vida máxima + CA. Dano que alcança este limiar marca 3 de Vida.",
+      "armadura": "Armadura",
+      "armaduraHint": "Espaços de armadura marcados. Bloqueio: cada espaço reduz o grau do dano em um."
     },
     "Items": {
-      "New": "Novo item",
-      "Create": "Criar item",
+      "Create": "Criar",
       "Delete": "Excluir item",
-      "Empty": "Nada por aqui ainda."
+      "Empty": "Nada por aqui ainda.",
+      "Equipar": "Equipar ou desequipar",
+      "Usar": "Usar",
+      "NewNames": {
+        "arma": "Nova arma",
+        "armadura": "Nova armadura",
+        "capacidade": "Nova capacidade",
+        "item": "Novo item"
+      },
+      "Sections": {
+        "arma": "Armas",
+        "armadura": "Armaduras",
+        "capacidade": "Capacidades",
+        "item": "Outros"
+      }
+    },
+    "Effects": {
+      "Title": "Estados e Condições",
+      "Apply": "Aplicar",
+      "Toggle": "Ativar ou suspender",
+      "Delete": "Remover",
+      "Empty": "Nenhum estado ou condição ativa.",
+      "GrupoEstados": "Estados",
+      "GrupoCondicoes": "Condições",
+      "Kind": {
+        "estado": "Estado",
+        "condicao": "Condição",
+        "efeito": "Efeito"
+      }
+    },
+    "Defesas": {
+      "Title": "Defesas"
     },
     "Chat": {
-      "AttributeTest": "Teste de {attribute}"
+      "TestTitle": "Teste em Pódio",
+      "Vs": "vs",
+      "Versus": "Contra {name}",
+      "GracaGanha": "+{n} Graça",
+      "PragaGanha": "+{n} Praga (mestre)",
+      "FomeLimpa": "Limpa 1 de Fome",
+      "EconomiaManual": "Distribua Graça e Praga manualmente",
+      "TrizNote": "O objetivo é alcançado, mas pode haver uma consequência negativa, a critério do mestre.",
+      "DesastreNote": "O mestre recebe uma jogada de Praga grátis e imediata. O resultado não pode ser modificado pelo dado extraordinário.",
+      "SomarDE": "Somar DE",
+      "SomaTitle": "Soma",
+      "SomaNoCartao": "Dado extraordinário somado: +{valor}. O resultado do objetivo foi modificado; a Graça e a Praga distribuídas não mudam.",
+      "PragaPendente": "Sem mestre conectado: some a Praga manualmente no tracker.",
+      "SomaNote": "O dado extraordinário ({de}) soma {valor} ao dado de {label}: {antes} vira {depois}.",
+      "SomaSucesso": "Alcança o DD {dd}: o objetivo é bem-sucedido.",
+      "SomaFalha": "Ainda não alcança o DD {dd}.",
+      "RolarDano": "Rolar Dano",
+      "DamageTitle": "Dano",
+      "AplicarDano": "Aplicar Dano",
+      "Gula": "Gula",
+      "GulaNote": "Gula: o dado extraordinário ({de}) soma {valor} ao dano.",
+      "GulaAplicada": "Gula aplicada: +{valor} ({de})",
+      "DanoAplicado": "{name} marca {marcas} de Vida: {grau}{detalhes}",
+      "BloqueioNote": "Bloqueio: {n}",
+      "SemDano": "sem dano",
+      "Ajuste": {
+        "imune": "imune",
+        "resistente": "resistente, metade",
+        "vulneravel": "vulnerável, dobro"
+      }
+    },
+    "Dialog": {
+      "TestTitle": "Configurar Teste em Pódio",
+      "Target": "Alvo: {name}",
+      "Primary": "Primeiro dado",
+      "Secondary": "Segundo dado",
+      "DDFaces": "Dado de Dificuldade",
+      "DDCount": "Quantidade de DD",
+      "DDCountHint": "Condições da cena adicionam ou removem dados de dificuldade (1 a 3, sempre da mesma face).",
+      "Roll": "Rolar",
+      "Cancel": "Cancelar",
+      "BloqueioTitle": "Bloqueio",
+      "BloqueioHint": "Dano de grau {grau}. Espaços de armadura livres: {livres}. Cada espaço marcado reduz o grau em um; reduzir Dano Menor anula o dano.",
+      "BloqueioLabel": "Espaços a marcar",
+      "BloqueioOk": "Confirmar"
+    },
+    "Warn": {
+      "SemPermissao": "Você não controla esse personagem.",
+      "SemPermissaoAlvo": "Sem permissão para alterar {name}.",
+      "SomaAplicada": "O dado extraordinário já foi somado a este teste.",
+      "SomaDesastre": "Um desastre não pode ser modificado pelo dado extraordinário.",
+      "SemDE": "Este personagem não possui dado extraordinário.",
+      "SemGraca": "Sem Graça suficiente (a Soma custa 1).",
+      "SemPraga": "Sem Praga suficiente (custa 1).",
+      "SemArma": "A arma deste teste não foi encontrada.",
+      "SemSucesso": "Só ataques bem-sucedidos causam dano.",
+      "GulaAplicada": "A Gula já foi aplicada a este dano.",
+      "FomeCheia": "A trilha de Fome está completamente marcada; o custo da Gula não pode ser pago.",
+      "PragaSemGM": "Sem mestre conectado: aplique a Praga manualmente no tracker.",
+      "SemAlvo": "Vise ou selecione ao menos um token."
+    },
+    "Praga": {
+      "Title": "Praga",
+      "Add": "Somar Praga",
+      "Remove": "Gastar Praga"
+    },
+    "Settings": {
+      "Praga": {
+        "Name": "Reserva de Praga do mestre"
+      },
+      "AutomacaoEconomia": {
+        "Name": "Automação da economia",
+        "Hint": "Aplica Graça, Praga e Fome automaticamente a cada teste. Desligada, o cartão apenas registra a distribuição para aplicação manual."
+      },
+      "MostrarPraga": {
+        "Name": "Mostrar o tracker de Praga",
+        "Hint": "Exibe a reserva de Praga do mestre ao carregar o mundo."
+      }
     },
     "Actor": {
       "base": {
         "FIELDS": {
           "attributes": {
-            "carne": { "value": { "label": "Carne" } },
-            "nervo": { "value": { "label": "Nervo" } },
-            "juizo": { "value": { "label": "Juízo" } },
-            "alma": { "value": { "label": "Alma" } }
+            "carne": {
+              "step": { "label": "Carne" },
+              "bonus": { "label": "Passos de estado (Carne)" }
+            },
+            "nervo": {
+              "step": { "label": "Nervo" },
+              "bonus": { "label": "Passos de estado (Nervo)" }
+            },
+            "juizo": {
+              "step": { "label": "Juízo" },
+              "bonus": { "label": "Passos de estado (Juízo)" }
+            },
+            "alma": {
+              "step": { "label": "Alma" },
+              "bonus": { "label": "Passos de estado (Alma)" }
+            }
+          },
+          "extraordinario": {
+            "tier": { "label": "Dado Extraordinário" }
+          },
+          "vida": {
+            "value": { "label": "Vida marcada" }
+          },
+          "defesas": {
+            "vulnerabilidades": { "label": "Vulnerabilidades" },
+            "resistencias": { "label": "Resistências" },
+            "imunidades": { "label": "Imunidades" }
           },
           "biography": { "label": "Biografia" }
         }
+      },
+      "character": {
+        "FIELDS": {
+          "fome": {
+            "value": { "label": "Fome marcada" }
+          },
+          "graca": {
+            "value": { "label": "Graça" }
+          },
+          "bens": {
+            "value": { "label": "Bens" },
+            "max": { "label": "Bens (máximo)" }
+          }
+        }
+      },
+      "npc": {
+        "FIELDS": {}
       }
     },
     "Item": {
       "base": {
         "FIELDS": {
           "description": { "label": "Descrição" }
+        }
+      },
+      "arma": {
+        "FIELDS": {
+          "dano": { "label": "Dano fixo" },
+          "tipo": { "label": "Tipo de dano" },
+          "elemento": { "label": "Elemento" },
+          "atributo": { "label": "Atributo de ataque" }
+        }
+      },
+      "armadura": {
+        "FIELDS": {
+          "ca": { "label": "Classe de Armadura" },
+          "acumulavel": { "label": "Acumulável (+)" },
+          "marcados": { "label": "Espaços marcados" },
+          "equipada": { "label": "Equipada" }
+        }
+      },
+      "capacidade": {
+        "FIELDS": {
+          "tier": { "label": "Tier exigido" }
+        }
+      },
+      "item": {
+        "FIELDS": {
+          "quantidade": { "label": "Quantidade" }
         }
       }
     }
